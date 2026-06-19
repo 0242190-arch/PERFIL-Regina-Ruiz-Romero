@@ -1,251 +1,597 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV Regina Ruiz Romero</title>
 
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        font-family: "Poppins", sans-serif;
+        background-color: #f5f2ed;
+        color: #2e2e2e;
         margin: 0;
-        padding: 0;
-        color: #242424;
       }
 
-      main {
-        width: 80%;
-        margin: 40px auto;
-        background-color: white;
-        padding: 40px;
-        border-radius: 25px;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      .navbar-custom {
+        background-color: rgba(245, 242, 237, 0.95);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       }
 
-      header {
-        text-align: center;
-        margin-bottom: 35px;
+      .navbar-brand {
+        font-weight: 800;
+        color: #2e2e2e;
       }
 
-      figure {
-        margin: 0;
+      .nav-link {
+        color: #4b4b4b;
+        font-weight: 500;
+      }
+
+      .nav-link:hover {
+        color: #7d7466;
+      }
+
+      .hero {
+        padding-top: 130px;
+        padding-bottom: 80px;
+      }
+
+      .etiqueta {
+        color: #7d7466;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
       }
 
       h1 {
-        font-size: 34px;
-        margin-bottom: 5px;
-        color: #1f1f1f;
+        font-size: 56px;
+        font-weight: 800;
+        color: #2e2e2e;
       }
 
-      h2 {
-        font-size: 22px;
-        color: #333333;
-        border-left: 6px solid #5555d9;
-        padding-left: 10px;
-        margin-top: 35px;
-      }
-
-      h3 {
-        color: #5555d9;
-        margin-bottom: 5px;
-      }
-
-      p {
-        line-height: 1.6;
-      }
-
-      section {
+      .hero h2 {
+        font-size: 24px;
+        color: #7d7466;
+        font-weight: 600;
         margin-bottom: 25px;
       }
 
-      .subtitulo {
-        color: #0a7ab2;
-        font-size: 18px;
-        letter-spacing: 2px;
-        font-weight: bold;
+      .hero-text,
+      .texto-principal {
+        font-size: 17px;
+        line-height: 1.8;
+        color: #4b4b4b;
       }
 
-      .contacto {
-        background-color: #f0f0ff;
-        padding: 15px;
-        border-radius: 15px;
-        margin-top: 20px;
+      .botones-hero {
+        margin-top: 25px;
       }
 
-      .cuadricula {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+      .btn {
+        border-radius: 30px;
+        padding: 10px 25px;
+        margin-right: 10px;
+      }
+
+      .foto-perfil {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 10px 20px 45px rgba(0, 0, 0, 0.18);
+        border: 8px solid #e9e2d8;
+      }
+
+      .seccion {
+        padding: 70px 0;
+      }
+
+      .titulo-seccion {
+        font-size: 34px;
+        font-weight: 800;
+        margin-bottom: 35px;
+        border-left: 7px solid #c7b9a5;
+        padding-left: 15px;
+      }
+
+      .card-custom {
+        background-color: #fffaf3;
+        border: none;
+        border-radius: 25px;
+        padding: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+      }
+
+      .card-custom h3 {
+        color: #7d7466;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .logo-card {
+        width: 120px;
+        margin-bottom: 20px;
+      }
+
+      .logo-global {
+        width: 180px;
+        margin-bottom: 20px;
+      }
+
+      .icono-grande {
+        font-size: 45px;
+        color: #7d7466;
+        margin-bottom: 20px;
+      }
+
+      .feature-box {
+        background-color: #e9e2d8;
+        border-radius: 22px;
+        text-align: center;
+        padding: 25px 15px;
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .feature-box i {
+        font-size: 34px;
+        color: #7d7466;
+      }
+
+      .feature-box p {
+        margin-top: 12px;
+        margin-bottom: 0;
+        font-weight: 600;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
         gap: 15px;
       }
 
-      article {
-        background-color: #f7f7f7;
-        padding: 15px;
-        border-radius: 15px;
-        border-left: 4px solid #0b83d3;
+      .tags span {
+        background-color: #e9e2d8;
+        padding: 12px 22px;
+        border-radius: 40px;
+        font-weight: 600;
+        color: #4b4b4b;
       }
 
-      ul {
-        padding-left: 20px;
+      .carrusel-custom {
+        background-color: #2e2e2e;
+        border-radius: 30px;
+        padding: 70px;
+        color: white;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
       }
 
-      li {
-        background-color: #f2f2f2;
-        margin-bottom: 8px;
-        padding: 10px;
-        border-radius: 10px;
-        list-style-type: none;
+      .carousel-content {
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .carousel-content h3 {
+        font-size: 34px;
+        font-weight: 800;
+        color: #e9e2d8;
+      }
+
+      .carousel-content p {
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .contacto-final {
+        background-color: #fffaf3;
+        border-radius: 30px;
+        padding: 50px;
+        margin-bottom: 70px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+      }
+
+      .contacto-final p {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+
+      .contacto-final i {
+        color: #7d7466;
+        margin-right: 10px;
       }
 
       footer {
+        background-color: #2e2e2e;
+        color: #f5f2ed;
         text-align: center;
-        margin-top: 40px;
-        color: #777777;
-        font-size: 14px;
+        padding: 25px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero {
+          text-align: center;
+          padding-top: 120px;
+        }
+
+        h1 {
+          font-size: 38px;
+        }
+
+        .hero h2 {
+          font-size: 20px;
+        }
+
+        .foto-perfil {
+          width: 300px;
+          height: 300px;
+          margin-top: 10%;
+        }
+
+        .titulo-seccion {
+          font-size: 28px;
+        }
+
+        .carrusel-custom {
+          padding: 40px 25px;
+        }
+
+        .carousel-content h3 {
+          font-size: 26px;
+        }
+
+        .carousel-content p {
+          font-size: 16px;
+        }
+
+        .contacto-final {
+          padding: 35px 25px;
+        }
       }
     </style>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- Google Font Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-
   <body>
+    <header id="inicio">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
+        <div class="container">
+          <a class="navbar-brand" href="#inicio">Regina Ruiz</a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#perfil">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#estudios">Estudios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#experiencia">Experiencia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#habilidades">Habilidades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#proyectos">Proyectos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="hero container">
+        <div class="row align-items-center">
+          <article class="col-lg-7">
+            <p class="etiqueta">Ingeniería en Innovación y Diseño</p>
+            <h1>Regina Ruiz Romero</h1>
+            <h2>Especialidad en Diseño Interactivo</h2>
+            <p class="hero-text">
+              Soy una persona creativa, curiosa y orientada a transformar ideas
+              en soluciones visuales y funcionales. Me interesa combinar diseño,
+              comunicación, tecnología e innovación para crear experiencias que
+              conecten con las personas y generen valor.
+            </p>
+
+            <div class="botones-hero">
+              <a href="#perfil" class="btn btn-dark">Ver CV</a>
+              <a href="#contacto" class="btn btn-outline-dark">Contactarme</a>
+            </div>
+          </article>
+
+          <figure class="col-lg-5 text-center">
+            <img
+              src="IMAGE/cvfoto.png"
+              style="width: 60%"
+              alt="Foto profesional de Regina Ruiz Romero"
+              class="foto-perfil"
+            />
+          </figure>
+        </div>
+      </section>
+    </header>
+
     <main>
-      <header>
-        <figure>
-          <img
-            src="cvfoto.png"
-            alt="Foto de Regina Ruiz Romero"
-            style="width: 80%"
-          />
-        </figure>
-
-        <h1>REGINA RUIZ ROMERO</h1>
-        <p class="subtitulo">
-          Ingeniería en Innovación y Diseño | Especialidad en Diseño Interactivo
-        </p>
-
-        <div class="contacto">
-          <p><strong>Mail:</strong> regisruizromero@gmail.com</p>
-          <p><strong>Tel:</strong> 55 1823 3407</p>
-          <p><strong>Ubicación:</strong> México, Ciudad de México</p>
-        </div>
-      </header>
-
-      <section>
-        <h2>Perfil Profesional</h2>
-        <p>
+      <section id="perfil" class="container seccion">
+        <h2 class="titulo-seccion">Perfil profesional</h2>
+        <p class="texto-principal">
           Creo que compartir ideas innovadoras es clave para hacer de nuestro
-          mundo un lugar más emocionante y lleno de valor. En lo personal,
-          disfruto celebrar los logros que alcanzamos a lo largo del camino.
-          Entiendo que las cosas buenas no llegan fácilmente, por lo que siempre
-          estoy lista para aportar mi toque de creatividad a los retos que la
-          vida nos presenta.
+          mundo un lugar más emocionante y lleno de valor. Disfruto celebrar los
+          logros que alcanzamos a lo largo del camino y entiendo que las cosas
+          buenas requieren esfuerzo, constancia y creatividad. Por eso, siempre
+          busco aportar una visión fresca a los retos que se presentan.
         </p>
       </section>
 
-      <section>
-        <h2>Estudios</h2>
+      <section id="estudios" class="container seccion">
+        <h2 class="titulo-seccion">Estudios</h2>
 
-        <article>
-          <h3>2025 – Presente</h3>
-          <p>
-            <strong>Universidad Panamericana, Campus Mixcoac</strong><br />
-            Especialización en Diseño Interactivo
-          </p>
-        </article>
+        <div class="row g-4">
+          <article class="col-md-4">
+            <div class="card card-custom h-100">
+              <img
+                src="IMAGE/logouniversidadpanamericana.jpg"
+                class="logo-card"
+                alt="Logo Universidad Panamericana"
+              />
+              <h3>2025 – Presente</h3>
+              <p><strong>Universidad Panamericana</strong></p>
+              <p>Especialidad en Diseño Interactivo.</p>
+            </div>
+          </article>
 
-        <br />
+          <article class="col-md-4">
+            <div class="card card-custom h-100">
+              <img
+                src="IMAGE/logouniversidadpanamericana.jpg"
+                class="logo-card"
+                alt="Logo Universidad Panamericana"
+              />
+              <h3>2021 – 2025</h3>
+              <p><strong>Universidad Panamericana</strong></p>
+              <p>Licenciatura en Ingeniería en Innovación y Diseño.</p>
+            </div>
+          </article>
 
-        <article>
-          <h3>2021 – 2025</h3>
-          <p>
-            <strong>Universidad Panamericana, Campus Mixcoac</strong><br />
-            Licenciatura en Ingeniería en Innovación y Diseño
-          </p>
-        </article>
-
-        <br />
-
-        <article>
-          <h3>2018 – 2021</h3>
-          <p>
-            <strong>PREPA Anáhuac Campus Oxford</strong><br />
-            Preparatoria
-          </p>
-        </article>
-      </section>
-
-      <section>
-        <h2>Experiencia</h2>
-
-        <article>
-          <h3>Coordinadora de Mkt & Com</h3>
-          <p>
-            <strong>Global Assurance Brokers</strong><br />
-            Febrero 2026 – Presente
-          </p>
-        </article>
-
-        <br />
-
-        <article>
-          <h3>Practicante de Diseño Gráfico</h3>
-          <p>
-            <strong>Global Assurance Brokers</strong><br />
-            Octubre 2024 – Febrero 2026
-          </p>
-        </article>
-      </section>
-
-      <section>
-        <h2>Habilidades</h2>
-
-        <div class="cuadricula">
-          <ul>
-            <li>Adobe Illustrator</li>
-            <li>Adobe Photoshop</li>
-            <li>Adobe After Effects</li>
-            <li>Canva</li>
-          </ul>
-
-          <ul>
-            <li>Microsoft Office 365</li>
-            <li>Google Apps</li>
-            <li>Zoom</li>
-            <li>Diseño y creatividad</li>
-          </ul>
+          <article class="col-md-4">
+            <div class="card card-custom h-100">
+              <i class="bi bi-mortarboard icono-grande"></i>
+              <h3>2018 – 2021</h3>
+              <p><strong>PREPA Anáhuac Campus Oxford</strong></p>
+              <p>Formación preparatoria.</p>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section>
-        <h2>Soft Skills</h2>
+      <section id="experiencia" class="container seccion">
+        <h2 class="titulo-seccion">Experiencia</h2>
 
-        <div class="cuadricula">
-          <ul>
-            <li>Pensamiento crítico</li>
-            <li>Resolución de problemas</li>
-            <li>Trabajo en equipo</li>
-          </ul>
+        <div class="row g-4">
+          <article class="col-md-6">
+            <div class="card card-custom h-100">
+              <img
+                src="IMAGE/logoglobal.png"
+                class="logo-global"
+                alt="Logo Global Assurance"
+              />
+              <h3>Coordinadora de Mkt & Com</h3>
+              <p><strong>Global Assurance Brokers</strong></p>
+              <p>Febrero 2026 – Presente</p>
+              <p>
+                Desarrollo de contenido institucional, comunicación interna,
+                presentaciones corporativas, boletines, blogs SEO, materiales
+                para clientes y apoyo en estrategias de marketing.
+              </p>
+            </div>
+          </article>
 
-          <ul>
-            <li>Adaptabilidad</li>
-            <li>Flexibilidad</li>
-            <li>Organización</li>
-          </ul>
+          <article class="col-md-6">
+            <div class="card card-custom h-100">
+              <img
+                src="IMAGE/logoglobal.png"
+                class="logo-global"
+                alt="Logo Global Assurance"
+              />
+              <h3>Practicante de Diseño Gráfico</h3>
+              <p><strong>Global Assurance Brokers</strong></p>
+              <p>Octubre 2024 – Febrero 2026</p>
+              <p>
+                Apoyo en diseño gráfico, creación de comunicados, piezas
+                visuales, contenido digital, presentaciones, campañas internas y
+                materiales para distintas áreas de negocio.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section>
-        <h2>Idiomas</h2>
+      <section id="habilidades" class="container seccion">
+        <h2 class="titulo-seccion">Habilidades</h2>
 
-        <article>
-          <p><strong>Español:</strong> Nativo</p>
-          <p><strong>Inglés:</strong> Avanzado</p>
-        </article>
+        <div class="row g-3">
+          <article class="col-6 col-md-4 col-lg-3">
+            <div class="feature-box">
+              <i class="bi bi-vector-pen"></i>
+              <p>Illustrator</p>
+            </div>
+          </article>
+          <article class="col-6 col-md-4 col-lg-3">
+            <div class="feature-box">
+              <i class="bi bi-brush"></i>
+              <p>Photoshop</p>
+            </div>
+          </article>
+          <article class="col-6 col-md-4 col-lg-3">
+            <div class="feature-box">
+              <i class="bi bi-film"></i>
+              <p>After Effects</p>
+            </div>
+          </article>
+          <article class="col-6 col-md-4 col-lg-3">
+            <div class="feature-box">
+              <i class="bi bi-palette"></i>
+              <p>Canva</p>
+            </div>
+          </article>
+          <article class="col-6 col-md-4 col-lg-3">
+            <div class="feature-box">
+              <i class="bi bi-file-earmark-text"></i>
+              <p>Office 365</p>
+            </div>
+          </article>
+          <article class="col-6 col-md-4 col-lg-3">
+            <div class="feature-box">
+              <i class="bi bi-google"></i>
+              <p>Google Apps</p>
+            </div>
+          </article>
+          <article class="col-6 col-md-4 col-lg-3">
+            <div class="feature-box">
+              <i class="bi bi-camera-video"></i>
+              <p>Zoom</p>
+            </div>
+          </article>
+          <article class="col-6 col-md-4 col-lg-3">
+            <div class="feature-box">
+              <i class="bi bi-lightbulb"></i>
+              <p>Creatividad</p>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <footer>
-        <p>CV digital</p>
-      </footer>
+      <section class="container seccion">
+        <h2 class="titulo-seccion">Soft Skills</h2>
+
+        <div class="tags">
+          <span>Pensamiento crítico</span>
+          <span>Resolución de problemas</span>
+          <span>Diseño y creatividad</span>
+          <span>Trabajo en equipo</span>
+          <span>Adaptabilidad</span>
+          <span>Organización</span>
+        </div>
+      </section>
+
+      <section id="proyectos" class="container seccion">
+        <h2 class="titulo-seccion">Proyectos</h2>
+
+        <div
+          id="carouselProyectos"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner carrusel-custom">
+            <article class="carousel-item active">
+              <div class="carousel-content">
+                <h3>Proyecto UX Spotify</h3>
+                <p>
+                  Investigación, hallazgos, user persona, customer journey y
+                  propuesta de rediseño enfocada en mejorar la experiencia de
+                  descubrimiento musical.
+                </p>
+              </div>
+            </article>
+
+            <article class="carousel-item">
+              <div class="carousel-content">
+                <h3>Comunicación Corporativa</h3>
+                <p>
+                  Desarrollo de boletines, comunicados, blogs SEO y materiales
+                  visuales para áreas internas y clientes de Global Assurance
+                  Brokers.
+                </p>
+              </div>
+            </article>
+
+            <article class="carousel-item">
+              <div class="carousel-content">
+                <h3>Diseño Interactivo</h3>
+                <p>
+                  Creación de propuestas visuales, estructura de interfaces y
+                  soluciones digitales con enfoque en innovación, diseño y
+                  experiencia de usuario.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselProyectos"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselProyectos"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </section>
+
+      <section id="contacto" class="container seccion contacto-final">
+        <h2 class="titulo-seccion">Contacto</h2>
+        <p><i class="bi bi-envelope"></i> regisruizromero@gmail.com</p>
+        <p><i class="bi bi-telephone"></i> 55 1823 3407</p>
+        <p><i class="bi bi-geo-alt"></i> Ciudad de México, México</p>
+      </section>
     </main>
+
+    <footer>
+      <p>Regina Ruiz Romero | CV digital profesional</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
