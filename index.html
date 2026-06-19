@@ -260,6 +260,74 @@
           padding: 35px 25px;
         }
       }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .feature-card {
+        background-color: #fffaf3;
+        border: none;
+        border-radius: 25px;
+        padding: 35px;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.15);
+      }
+
+      .feature-card i {
+        font-size: 42px;
+        color: #7d7466;
+        margin-bottom: 18px;
+      }
+
+      .feature-card h3 {
+        font-weight: 800;
+        color: #2e2e2e;
+        margin-bottom: 15px;
+      }
+
+      .carrusel-imagenes {
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+      }
+
+      .imagen-carrusel {
+        height: 430px;
+        object-fit: cover;
+        filter: brightness(0.65);
+      }
+
+      .caption-custom {
+        background-color: rgba(46, 46, 46, 0.65);
+        border-radius: 20px;
+        padding: 25px;
+      }
+
+      .caption-custom h3 {
+        font-weight: 800;
+        color: #f5f2ed;
+      }
+
+      .caption-custom p {
+        color: #fffaf3;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        transition: all 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .imagen-carrusel {
+          height: 280px;
+        }
+      }
     </style>
 
     <!-- Bootstrap -->
@@ -287,7 +355,7 @@
     <header id="inicio">
       <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
         <div class="container">
-          <a class="navbar-brand" href="#inicio">Regina Ruiz</a>
+          <a class="navbar-brand" href="#inicio">Mi Experiencia</a>
 
           <button
             class="navbar-toggler"
@@ -517,44 +585,114 @@
         </div>
       </section>
 
+      <section class="container seccion">
+        <h2 class="titulo-seccion">Áreas de enfoque</h2>
+
+        <div class="row g-4">
+          <article class="col-md-4">
+            <div class="card feature-card h-100">
+              <i class="bi bi-brush"></i>
+              <h3>Diseño Visual</h3>
+              <p>
+                Creación de piezas gráficas, identidad visual, presentaciones y
+                materiales digitales.
+              </p>
+            </div>
+          </article>
+
+          <article class="col-md-4">
+            <div class="card feature-card h-100">
+              <i class="bi bi-phone"></i>
+              <h3>Diseño Interactivo</h3>
+              <p>
+                Estructura de interfaces, experiencia de usuario y soluciones
+                digitales funcionales.
+              </p>
+            </div>
+          </article>
+
+          <article class="col-md-4">
+            <div class="card feature-card h-100">
+              <i class="bi bi-megaphone"></i>
+              <h3>Marketing & Comunicación</h3>
+              <p>
+                Contenido corporativo, campañas internas, blogs, comunicados y
+                estrategia digital.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section id="proyectos" class="container seccion">
-        <h2 class="titulo-seccion">Proyectos</h2>
+        <h2 class="titulo-seccion">Proyectos destacados</h2>
 
         <div
           id="carouselProyectos"
-          class="carousel slide"
+          class="carousel slide carousel-fade"
           data-bs-ride="carousel"
         >
-          <div class="carousel-inner carrusel-custom">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselProyectos"
+              data-bs-slide-to="0"
+              class="active"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselProyectos"
+              data-bs-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselProyectos"
+              data-bs-slide-to="2"
+            ></button>
+          </div>
+
+          <div class="carousel-inner carrusel-imagenes">
             <article class="carousel-item active">
-              <div class="carousel-content">
+              <img
+                src="IMAGE/proyecto-spotify.png"
+                class="d-block w-100 imagen-carrusel"
+                alt="Proyecto UX Spotify"
+              />
+              <div class="carousel-caption d-none d-md-block caption-custom">
                 <h3>Proyecto UX Spotify</h3>
                 <p>
-                  Investigación, hallazgos, user persona, customer journey y
-                  propuesta de rediseño enfocada en mejorar la experiencia de
-                  descubrimiento musical.
+                  Investigación, user persona, customer journey y propuesta de
+                  rediseño.
                 </p>
               </div>
             </article>
 
             <article class="carousel-item">
-              <div class="carousel-content">
+              <img
+                src="IMAGE/logoglobal.png"
+                class="d-block w-100 imagen-carrusel"
+                alt="Proyecto Global Assurance"
+              />
+              <div class="carousel-caption d-none d-md-block caption-custom">
                 <h3>Comunicación Corporativa</h3>
                 <p>
-                  Desarrollo de boletines, comunicados, blogs SEO y materiales
-                  visuales para áreas internas y clientes de Global Assurance
-                  Brokers.
+                  Diseño de boletines, comunicados, blogs SEO y materiales
+                  institucionales.
                 </p>
               </div>
             </article>
 
             <article class="carousel-item">
-              <div class="carousel-content">
+              <img
+                src="IMAGE/proyecto-diseno.png"
+                class="d-block w-100 imagen-carrusel"
+                alt="Proyecto de diseño interactivo"
+              />
+              <div class="carousel-caption d-none d-md-block caption-custom">
                 <h3>Diseño Interactivo</h3>
                 <p>
-                  Creación de propuestas visuales, estructura de interfaces y
-                  soluciones digitales con enfoque en innovación, diseño y
-                  experiencia de usuario.
+                  Soluciones visuales enfocadas en innovación, experiencia y
+                  creatividad.
                 </p>
               </div>
             </article>
