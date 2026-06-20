@@ -79,16 +79,19 @@
       }
 
       .foto-perfil {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+        border-radius: 60%;
         object-fit: cover;
-        box-shadow: 10px 20px 45px rgba(0, 0, 0, 0.18);
-        border: 8px solid #e9e2d8;
+        border: 2px #e9e2d8;
+      }
+
+      .foto-perfil:hover {
+        transform: scale(1.05);
       }
 
       .seccion {
-        padding: 70px 0;
+        padding: 20px 0;
       }
 
       .titulo-seccion {
@@ -105,12 +108,18 @@
         border-radius: 25px;
         padding: 30px;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+        transition: all 0.3s ease;
       }
 
       .card-custom h3 {
         color: #7d7466;
         font-size: 20px;
         font-weight: 700;
+      }
+
+      .card-custom:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.16);
       }
 
       .logo-card {
@@ -212,6 +221,30 @@
         margin-right: 10px;
       }
 
+      .back-to-top {
+        position: fixed;
+        right: 30px;
+        bottom: 30px;
+        width: 55px;
+        height: 55px;
+        background-color: #2e2e2e;
+        color: #f5f2ed;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 26px;
+        text-decoration: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        transition: 0.3s;
+        z-index: 1000;
+      }
+
+      .back-to-top:hover {
+        background-color: #7d7466;
+        color: white;
+        transform: translateY(-5px);
+      }
       footer {
         background-color: #2e2e2e;
         color: #f5f2ed;
@@ -319,8 +352,8 @@
       }
 
       .btn:hover {
-        transform: translateY(-3px);
-        transition: all 0.3s ease;
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
       }
 
       @media (max-width: 768px) {
@@ -413,7 +446,7 @@
           <figure class="col-lg-5 text-center">
             <img
               src="IMAGE/cvfoto.png"
-              style="width: 60%"
+              style="width: 70%"
               alt="Foto profesional de Regina Ruiz Romero"
               class="foto-perfil"
             />
@@ -654,16 +687,24 @@
           <div class="carousel-inner carrusel-imagenes">
             <article class="carousel-item active">
               <img
-                src="IMAGE/proyecto-spotify.png"
+                src="IMAGE/proyecto-sony-bocina.png"
                 class="d-block w-100 imagen-carrusel"
-                alt="Proyecto UX Spotify"
+                alt="Sony Bocina"
               />
               <div class="carousel-caption d-none d-md-block caption-custom">
-                <h3>Proyecto UX Spotify</h3>
+                <h3>Sony Bocina</h3>
                 <p>
-                  Investigación, user persona, customer journey y propuesta de
-                  rediseño.
+                  Modelado 3D y renderizado de una bocina Sony utilizando
+                  Rhinoceros 3D y KeyShot 11, desarrollando diferentes acabados
+                  y composiciones visuales.
                 </p>
+                <button
+                  class="btn btn-light mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalSony"
+                >
+                  Ver más
+                </button>
               </div>
             </article>
 
@@ -674,26 +715,42 @@
                 alt="Proyecto Global Assurance"
               />
               <div class="carousel-caption d-none d-md-block caption-custom">
-                <h3>Comunicación Corporativa</h3>
+                <h3>Mkt Corporativa</h3>
                 <p>
-                  Diseño de boletines, comunicados, blogs SEO y materiales
-                  institucionales.
+                  Desarrollo de materiales gráficos, boletines, comunicados y
+                  contenido digital para marketing y comunicación interna,
+                  fortaleciendo la identidad visual y el branding corporativo.
                 </p>
+                <button
+                  class="btn btn-light mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalGlobal"
+                >
+                  Ver más
+                </button>
               </div>
             </article>
 
             <article class="carousel-item">
               <img
-                src="IMAGE/proyecto-diseno.png"
+                src="IMAGE/proyecto-canon-camara.png"
                 class="d-block w-100 imagen-carrusel"
-                alt="Proyecto de diseño interactivo"
+                alt="Cámara Canon"
               />
               <div class="carousel-caption d-none d-md-block caption-custom">
-                <h3>Diseño Interactivo</h3>
+                <h3>Cámara Canon</h3>
                 <p>
-                  Soluciones visuales enfocadas en innovación, experiencia y
-                  creatividad.
+                  Modelado y renderizado de una cámara Canon mediante Rhinoceros
+                  3D y KeyShot 11, incorporando materiales, iluminación y
+                  escenarios realistas.
                 </p>
+                <button
+                  class="btn btn-light mt-3"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCanon"
+                >
+                  Ver más
+                </button>
               </div>
             </article>
           </div>
@@ -724,7 +781,83 @@
         <p><i class="bi bi-telephone"></i> 55 1823 3407</p>
         <p><i class="bi bi-geo-alt"></i> Ciudad de México, México</p>
       </section>
+
+      <!-- Modal Sony -->
+      <div class="modal fade" id="modalSony" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Sony Bocina</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <p>
+                Proyecto de modelado y renderizado 3D desarrollado en Rhinoceros
+                3D y KeyShot 11, creando diferentes acabados, composiciones
+                visuales y un exhibidor para la presentación del producto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Canon -->
+      <div class="modal fade" id="modalCanon" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cámara Canon</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <p>
+                Proyecto de modelado y renderizado de una cámara Canon realizado
+                en Rhinoceros 3D y KeyShot 11, incorporando materiales,
+                iluminación y escenarios de uso realista.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Global -->
+      <div class="modal fade" id="modalGlobal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Global Assurance Brokers</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <p>
+                Participación en la creación de materiales gráficos, boletines,
+                comunicados, blogs SEO y contenido digital para fortalecer la
+                comunicación interna y la identidad visual de la empresa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
+    <a href="#inicio" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
 
     <footer>
       <p>Regina Ruiz Romero | CV digital profesional</p>
