@@ -221,6 +221,19 @@
         margin-right: 10px;
       }
 
+      .qr-contacto {
+        width: 180px;
+        background-color: white;
+        padding: 15px;
+        border-radius: 25px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .qr-contacto:hover {
+        transform: scale(1.03);
+        transition: 0.3s;
+      }
+
       .back-to-top {
         position: fixed;
         right: 30px;
@@ -777,9 +790,54 @@
 
       <section id="contacto" class="container seccion contacto-final">
         <h2 class="titulo-seccion">Contacto</h2>
-        <p><i class="bi bi-envelope"></i> regisruizromero@gmail.com</p>
-        <p><i class="bi bi-telephone"></i> 55 1823 3407</p>
-        <p><i class="bi bi-geo-alt"></i> Ciudad de México, México</p>
+
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <p>
+              <i class="bi bi-envelope"></i>
+              regisruizromero@gmail.com
+            </p>
+
+            <p>
+              <i class="bi bi-telephone"></i>
+              55 1823 3407
+            </p>
+
+            <p>
+              <i class="bi bi-geo-alt"></i>
+              Ciudad de México, México
+            </p>
+
+            <div class="mt-4">
+              <a
+                href="mailto:regisruizromero@gmail.com"
+                class="btn btn-dark me-3"
+              >
+                <i class="bi bi-envelope"></i>
+                Correo
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/regina-ruiz-297793180/"
+                target="_blank"
+                class="btn btn-outline-dark"
+              >
+                <i class="bi bi-linkedin"></i>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-5 text-center mt-5 mt-lg-0">
+            <img
+              src="contactoQR.png"
+              alt="QR de contacto"
+              class="qr-contacto"
+            />
+
+            <p class="mt-3">Escanea para guardar mi contacto</p>
+          </div>
+        </div>
       </section>
 
       <!-- Modal Sony -->
